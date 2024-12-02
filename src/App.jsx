@@ -1,19 +1,27 @@
 import './App.css'
+import { useEffect } from 'react';
+
+
+import ToggleTheme from './components/toggleTheme/ToggleTheme'
 function App() {
 
-  /**
-   * @description función que suma numero
-   * @author pedro Parada (30-11-2023), brayham (01-01-2025)
-   * @param {int, int}  numero a sumar
-   * @returns retorna suma de dos números
-   */
-
+  // variable para configurar mi toggle de cambio de modo
+  const configToggle = {
+    showLabel:true,
+    toggleLabel:"Mi toggle Mode",
+    fixed:true
+  }
+  
+  useEffect(()=> {
+      localStorage.setItem("user-theme","light")
+  },[])
 
   return (
     <>
-<h1> Plantilla Workflow</h1>   
+        <ToggleTheme config={configToggle} />
+      <h1> Plantilla Workflow</h1>
 
- </>
+    </>
   )
 }
 

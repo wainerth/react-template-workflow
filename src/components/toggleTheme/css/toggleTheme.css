@@ -1,0 +1,124 @@
+/** Light Theme**/
+:root {
+    --background-color: var(--light-color);
+    --text-color: var(--dark-color);
+    --light-theme-color: #F0F0F0;
+    --dark-theme-color: #343A40;
+
+    --light-theme-primary-dark: var(--dark-theme-color);
+    --light-theme-secondary-dark: var(--light-theme-color);
+    --light-theme-shadow: var(--dark-theme-color);
+    --tonalidad: 0;
+}
+
+/**  Dark Theme**/
+.dark {
+    --background-color: var(--dark-color);
+    --text-color: var(--light-color);
+    --light-theme-primary-dark: var(--light-theme-color);
+    --light-theme-secondary-dark: var(--dark-theme-color);
+    --light-theme-shadow: var(--light-theme-color);
+    --tonalidad: 100;
+}
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.fixed-toggle {
+    position: fixed;
+    top: 0,
+
+}
+
+.fixed-right {
+    right: 0;
+}
+
+.fixed-left {
+    left: 0;
+}
+
+#Toggle-Switches-Container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+#Toggle-Switches-Container section {
+    border-radius: 10px;
+    text-align: center;
+    padding: 2em;
+    width: 48%;
+}
+
+.toggle-contents {
+    padding: 5px 10px;
+}
+
+.label-toggle {
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: .5px;
+    margin: 0;
+    padding: 0;
+}
+
+.toggle-contents-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.toggle-wrapper {
+    background-color: var(--light-theme-primary-dark);
+    border: 2px solid var(--light-theme-primary-dark);
+    border-radius: 35px;
+    box-shadow: 1px 1px 5px var(--light-theme-shadow);
+    display: flex;
+    justify-content: flex-start;
+    margin: .5em 1.25em;
+    width: 3.5em;
+    min-width: 3.5em;
+}
+
+.toggle-dot {
+    background-color: var(--light-theme-secondary-dark);
+    box-shadow: 1px 1px 3px var(--light-theme-shadow);
+    margin: 2px;
+    border-radius: 35px;
+    height: 1.5em;
+    width: 1.5em;
+    cursor: pointer;
+}
+
+.toggle-is-active {
+    justify-content: flex-end;
+}
+
+
+.toggle-contents-wrapper .icon {
+    width: 20px;
+    display: block;
+    height: 20px;
+}
+
+.toggle-contents-wrapper .icon {
+    filter: invert(var(--tonalidad))
+}
+
+.toggle-contents-wrapper .icon-light {
+    background-image: url(../img/light.svg);
+
+}
+
+.toggle-contents-wrapper .icon-dark {
+    background-image: url(../img/dark.svg);
+
+}
