@@ -9,12 +9,11 @@ import './css/toggleTheme.css'
  *@author Pedro Parada
  * @param {config}  object that defines the initial configuration of the toggle
  */
-
 const ThemeToggle = ({ config = {
     showLabel: true,
     toggleLabel: 'Titulo del toggle',
     fixed: false,
-    fixedRight: (config.fixed && !config.fixedRight && !config.fixedLeft) ? true : false,
+    fixedRight: false,
     fixedLeft: false
 } }) => {
 
@@ -22,10 +21,14 @@ const ThemeToggle = ({ config = {
         config: PropTypes.object,
 
     };
+
+
     const [theme, setTheme] = useState(() => {
         // detect if there is user configuration
         const storedTheme = localStorage.getItem('user-theme');
-
+        if (config.fixed && !config.fixedRight && !config.fixedLeft) {
+            config.fixedRight = true;
+        }
         // Detect initial theme based on prefers-color-scheme
         return storedTheme ? storedTheme : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     });
@@ -50,7 +53,7 @@ const ThemeToggle = ({ config = {
 
         mediaQuery.addEventListener('change', handleChange);
 
-        
+
         return () => mediaQuery.removeEventListener('change', handleChange);
     }, [theme]);
 
@@ -81,7 +84,7 @@ const ThemeToggle = ({ config = {
 
 
     return (
-        <div className={`toggle-contents ${(config.fixed === true) ? config.fixedRight ? 'fixed-toggle fixed-right' : 'fixed-toggle fixed-right' : ''} `}>
+        <div className={`toggle-contents ${(config.fixed === true) ? config.fixedRight ? 'fixed-toggle fixed-right' : 'fixed-toggle fixed-left' : ''} `}>
             {
                 config.showLabel && (
                     <h3 className='label-toggle'>{config.toggleLabel}</h3>
