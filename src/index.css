@@ -29,13 +29,16 @@
   --btn-dark-primary:var(--blue-color);
   --btn-dark-secondary: var(--green-color);
   --btn-dark-third: var(--blue-color);
+
+  --text-color-light : var(--light-color);
 }
 
 /** Dark theme **/
 .dark {
   --btn-dark-primary:var(--light-color);
-  --btn-dark-secundar: var(--light-color);
+  --btn-dark-secondary: var(--light-color);
   --btn-dark-third: var(--blue-color);
+  --text-color-light : var(--dark-color);
 }
 
 
@@ -67,6 +70,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
+  color: var(--text-color-light);
   background-color: var(--btn-dark-primary);
   cursor: pointer;
   transition: border-color 0.25s;

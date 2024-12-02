@@ -23,10 +23,10 @@ const ThemeToggle = ({ config = {
 
     };
     const [theme, setTheme] = useState(() => {
-        // detectar si hay configuración del usuraio?
+        // detect if there is user configuration
         const storedTheme = localStorage.getItem('user-theme');
 
-        // Detectar tema inicial basado en prefers-color-scheme
+        // Detect initial theme based on prefers-color-scheme
         return storedTheme ? storedTheme : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     });
 
@@ -49,6 +49,8 @@ const ThemeToggle = ({ config = {
         }
 
         mediaQuery.addEventListener('change', handleChange);
+
+        
         return () => mediaQuery.removeEventListener('change', handleChange);
     }, [theme]);
 

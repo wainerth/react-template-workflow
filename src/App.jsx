@@ -11,7 +11,7 @@ function App() {
     toggleLabel:"Mi toggle Mode",
     fixed:true
   }
-  
+
   useEffect(()=> {
       localStorage.setItem("user-theme","light")
   },[])
@@ -20,7 +20,7 @@ function App() {
     <>
         <ToggleTheme config={configToggle} />
       <h1> Plantilla Workflow</h1>
-
+    <button>mi boton</button>
     </>
   )
 }
