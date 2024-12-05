@@ -103,7 +103,12 @@
     background-color: transparent;
     border: 0;
 }
-
+.vs-response{
+    display: none;
+}
+.vs-response button{
+    width: 100%;
+}
 .workflow-dropdown button:hover {
     color: var(--text-hover-theme);
     background-color: transparent;
@@ -263,5 +268,22 @@
     .user-name .email {
         font-size: 16px;
         line-height: 19.2px;
+    }
+}
+@media (max-width:1439px) {
+    .vs-hidden{
+        display: none;
+    }
+    .vs-response{
+        display: block;
+    }
+}
+
+@media (max-width:1199.9px) {
+    .vs-hidden{
+        display: block;
+    }
+    .vs-response{
+        display: none;
     }
 }

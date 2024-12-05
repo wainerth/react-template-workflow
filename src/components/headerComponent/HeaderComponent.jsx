@@ -117,7 +117,7 @@ const HeaderComponent = ({ config = {}, onLogout, onSettings, onLanguageSelect, 
                         <div className='others-actions'>
 
                             {showLanguageDropdown && (
-                                <Dropdown className="language-dropdown workflow-dropdown">
+                                <Dropdown className="language-dropdown workflow-dropdown ">
                                     <Dropdown.Toggle id="dropdown-language">
                                         <div className="img-flat">
                                             <img className='img-fluid' src={flatSpain} alt="flat Country" />
@@ -132,7 +132,7 @@ const HeaderComponent = ({ config = {}, onLogout, onSettings, onLanguageSelect, 
                             {/* Dropdown del usuario */}
                             {isAuthenticated && (<div className='action-user'>
                                 {showCompanyDropdown && (
-                                    <Dropdown className="company-dropdown workflow-dropdown">
+                                    <Dropdown className="company-dropdown workflow-dropdown vs-hidden">
                                         <Dropdown.Toggle id="dropdown-company">
                                             <div className="img-45">
                                                 <LuBuilding2 size={20} color='dark' />
@@ -147,7 +147,7 @@ const HeaderComponent = ({ config = {}, onLogout, onSettings, onLanguageSelect, 
                                 )}
 
                                 {showNotificationsDropdown && (
-                                    <Dropdown className="notifications-dropdown workflow-dropdown">
+                                    <Dropdown className="notifications-dropdown workflow-dropdown vs-hidden">
                                         <Dropdown.Toggle id="dropdown-notifications">
                                             <div className="img-45">
                                                 <FaRegBell size={20} color='dark' />
@@ -162,7 +162,7 @@ const HeaderComponent = ({ config = {}, onLogout, onSettings, onLanguageSelect, 
                                 )}
 
                                 {/* Ícono condicional */}
-                                <div className='user-icon'>
+                                <div className='user-icon vs-hidden'>
                                     {showIcon && (
                                         <img
                                             src={userIcon.url}
@@ -170,20 +170,70 @@ const HeaderComponent = ({ config = {}, onLogout, onSettings, onLanguageSelect, 
                                         />
                                     )}
                                 </div>
-                                <Dropdown className="user-dropdown ">
+                                {/* Nombre del usuario condicional */}
+                                <Dropdown className="user-dropdown  vs-hidden">
                                     <Dropdown.Toggle className="user-icon-dropdown" id="dropdown-basic">
 
-                                        {/* Nombre del usuario condicional */}
-                                        {showUserName && <div className="user-name">
-                                            <span className='alias'> {userName}</span>
-                                            <span className='email'>{userEmail}</span>
-                                        </div>}
+                                        {
+
+                                            showUserName && <div className="user-name">
+                                                <span className='alias'> {userName}</span>
+                                                <span className='email'>{userEmail}</span>
+                                            </div>}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu >
                                         <Dropdown.Item onClick={onSettings}>Configuración</Dropdown.Item>
                                         <Dropdown.Item onClick={onLogout}>Cerrar sesión</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
+
+                                <Dropdown className="user-dropdown vs-response" autoClose="outside">
+                                    <Dropdown.Toggle className="user-icon-dropdown" id="dropdown-autoclose-outside">
+                                        {
+
+                                            showUserName && <div className="user-name">
+                                                <span className='alias'> {userName}</span>
+                                                <span className='email'>{userEmail}</span>
+                                            </div>}
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item onClick={onSettings}>Configuración</Dropdown.Item>
+                                        <Dropdown.Item onClick={onLogout}>Cerrar sesión</Dropdown.Item>
+                                        {/* <Dropdown.Item> */}
+                                        {showCompanyDropdown && (
+                                            <Dropdown className="company-dropdown workflow-dropdown">
+                                                <Dropdown.Toggle id="dropdown-company">
+                                                    <div className="img-45">
+                                                        <LuBuilding2 size={20} color='dark' />
+                                                        {/* <img className='img-fluid' src={logocorporation} alt="logo corporación" /> */}
+                                                    </div>
+                                                </Dropdown.Toggle>
+                                                <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={() => onCompanySelect('Empresa 1')}>Empresa 1</Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => onCompanySelect('Empresa 2')}>Empresa 2</Dropdown.Item>
+                                                </Dropdown.Menu>
+                                            </Dropdown>
+                                        )}
+
+                                        {showNotificationsDropdown && (
+                                            <Dropdown className="notifications-dropdown workflow-dropdown">
+                                                <Dropdown.Toggle id="dropdown-notifications">
+                                                    <div className="img-45">
+                                                        <FaRegBell size={20} color='dark' />
+                                                        {/* <img className='img-fluid' src={iconNotification} alt="logo Notificación" /> */}
+                                                    </div>
+                                                </Dropdown.Toggle>
+                                                <Dropdown.Menu>
+                                                    <Dropdown.Item onClick={onNotificationClick}>Notificación 1</Dropdown.Item>
+                                                    <Dropdown.Item onClick={onNotificationClick}>Notificación 2</Dropdown.Item>
+                                                </Dropdown.Menu>
+                                            </Dropdown>
+                                        )}
+                                        {/* </Dropdown.Item> */}
+                                    </Dropdown.Menu>
+                                </Dropdown>
+
                             </div>)}
                             {showToggleMode && (
                                 <ToggleTheme config={toggeModeConfig} />
