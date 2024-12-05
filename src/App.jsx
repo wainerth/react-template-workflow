@@ -1,26 +1,43 @@
 import './App.css'
 import { useEffect } from 'react';
 
+import HeaderComponent from './components/headerComponent/HeaderComponent';
+import { Container, Col } from 'react-bootstrap';
 
-import ToggleTheme from './components/toggleTheme/ToggleTheme'
 function App() {
 
-  // variable para configurar mi toggle de cambio de modo
-  const configToggle = {
-    showLabel:true,
-    toggleLabel:"Mi toggle Mode",
-    fixed:true
-  }
 
-  useEffect(()=> {
-      localStorage.setItem("user-theme","light")
-  },[])
+  // Configuration object for the Header
+  const headerConfig = {
+    showTitle: false,
+    isAuthenticated: true,
+    title: "Mi Aplicación",
+    toggeModeConfig: {
+      showLabel: false,
+    }
+
+  };
+
+
+  useEffect(() => {
+    localStorage.setItem("user-theme", "light")
+  }, [])
 
   return (
     <>
-        <ToggleTheme config={configToggle} />
-      <h1> Plantilla Workflow</h1>
-    <button>mi boton</button>
+      <HeaderComponent
+        config={headerConfig}
+
+      />
+      <div className="page">
+        <Container>
+          <Col sm={12}>
+            <h1> Plantilla Workflow</h1>
+            <button>mi boton</button>
+          </Col>
+
+        </Container>
+      </div>
     </>
   )
 }

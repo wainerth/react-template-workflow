@@ -1,0 +1,267 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    color: white;
+    z-index: 9999999;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    border-bottom: 1px solid #000000
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: initial !important;
+}
+
+.nav-app {
+    padding: 18px 25px;
+}
+
+.img-logo {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-right: 25px;
+}
+.img-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.navbar-brand {
+    margin: 0;
+}
+
+.nav-app .navbar-collapse {
+    justify-content: space-between;
+}
+
+.nav-app .navbar-nav {
+    gap: 25px;
+}
+
+.nav-app .nav-link {
+    min-width: 140px;
+    /* height: 65px;  */
+    border-radius: 45px;
+    background-color: #CCD8F5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 26px;
+    line-height: 31.2px; */
+    font-weight: 400;
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.nav-app .nav-link:hover {
+    background-color: #387CE1;
+    color: white;
+}
+
+.header .dropdown-menu[data-bs-popper] {
+    left: inherit;
+    right: 0 !important;
+}
+
+.nav-link {
+    color: var(--text-color-theme);
+}
+
+
+
+.header-title {
+    text-align: center;
+    margin: 0;
+    display: inline !important;
+    width: auto !important;
+}
+
+.others-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.workflow-dropdown button {
+    /* width: 65px;
+    height: 65px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0;
+}
+
+.workflow-dropdown button:hover {
+    color: var(--text-hover-theme);
+    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.workflow-dropdown button::after {
+    display: none;
+}
+.user-dropdown button:hover{
+    color: var(--text-hover-theme);
+}
+.user-dropdown button.btn.show {
+    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.img-flat {
+    min-width: 30px;
+    height: 30px;
+    border-radius: 100px;
+}
+.img-flat img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.img-45 {
+    min-width: 30px;
+    height: 30px;
+    border-radius: 100px;
+}
+
+.img-45 svg {
+    color: var(--text-color-theme);
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.action-user {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px !important;
+    width: auto !important;
+}
+
+.user-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: 2px solid var(--text-color-theme);
+
+    overflow: hidden;
+    margin-right: 16px;
+}
+
+.user-icon img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.user-icon-dropdown {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color-theme);
+}
+
+.user-dropdown button:hover {
+    background-color: transparent !important;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color-theme);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.user-name .alias {
+    display: block;
+    font-family: var(--font-theme);
+    /* font-size: 20px;
+    line-height: 28.8px; */
+    font-weight: 600 !important;
+    color: var(--text-color-theme);
+}
+
+.user-name .email {
+    /* font-size: 16px;
+    line-height: 19.2px; */
+    font-weight: 400;
+    color: var(--color-theme-626262);
+}
+
+.header .dropdown-menu[data-bs-popper] {
+    background-color: var(--background-color);
+}
+
+.header .dropdown-menu[data-bs-popper] a {
+    color: var(--text-color-theme);
+
+}
+
+.header .dropdown-menu[data-bs-popper] a:hover {
+    color: var(--text-hover-theme);
+}
+
+
+@media (min-width:1690px) {
+    .img-logo {
+        min-width: 80px !important;
+        height: 80px;
+    }
+
+    .nav-app .nav-link {
+        min-width: 180px;
+        height: 65px;
+        font-size: 26px;
+        line-height: 31.2px;
+    }
+
+    .workflow-dropdown button {
+        width: 65px;
+        height: 65px;
+    }
+    .img-flat {
+        min-width: 45px;
+        height: 45px;
+    }
+    
+    .img-45 {
+        min-width: 45px;
+        height: 45px;
+    }
+    .user-icon {
+        width: 65px;
+        height: 65px;
+    }
+    .user-name .alias {
+        font-size: 20px;
+        line-height: 28.8px;
+    }
+    
+    .user-name .email {
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+}

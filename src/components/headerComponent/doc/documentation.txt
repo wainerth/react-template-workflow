@@ -1,0 +1,9 @@
+This document requires the installation of the following libraries:
+/*************************************************************************/ 
+
+
+bootstrap, 
+
+react-bootstrap 
+
+react-icons

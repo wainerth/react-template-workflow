@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import './css/toggleTheme.css'
 
-
 /**
  *@description toggle component to switch from light to dark mode and vice versa
  *@author Pedro Parada

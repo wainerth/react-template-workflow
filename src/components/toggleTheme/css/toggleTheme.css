@@ -29,8 +29,7 @@ body {
 
 .fixed-toggle {
     position: fixed;
-    top: 0,
-
+    top: 0;
 }
 
 .fixed-right {
@@ -67,6 +66,7 @@ body {
     letter-spacing: .5px;
     margin: 0;
     padding: 0;
+    color: initial;
 }
 
 .toggle-contents-wrapper {
@@ -83,7 +83,7 @@ body {
     box-shadow: 1px 1px 5px var(--light-theme-shadow);
     display: flex;
     justify-content: flex-start;
-    margin: .5em 1.25em;
+    margin: 0 1.25em;
     width: 3.5em;
     min-width: 3.5em;
 }

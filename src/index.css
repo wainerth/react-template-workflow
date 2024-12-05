@@ -1,18 +1,20 @@
 /* satoshi-font.css -- font family file of my project  */
 @import './fonts/satochi-font/stylesheet.css';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 /** root style **/
 :root {
-  font-family: 'Satoshi',Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Satoshi', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
+  --font-theme: 'Satoshi';
   /** section palette of colors of the application **/
   --light-color: #F0F0F0;
   --dark-color: #343A40;
@@ -20,28 +22,39 @@
   --green-color: #198754;
   --background-color: #f8f9fa;
   --text-color: #343a40;
+  --color-theme-626262: #626262
 }
 
 /** Normal theme**/
 :root {
   --background-color: #ffffff;
   --text-color: #000000;
-  --btn-dark-primary:var(--blue-color);
+  --btn-dark-primary: var(--blue-color);
   --btn-dark-secondary: var(--green-color);
   --btn-dark-third: var(--blue-color);
-  --h1-color-theme: blue
-  --text-color-light : var(--light-color);
+  --h1-color-theme: blue;
+  --text-color-light: var(--light-color);
+  --text-color-theme: var(--dark-color);
+  --text-hover-theme: var(--blue-color);
 }
 
 /** Dark theme **/
 .dark {
-  --btn-dark-primary:var(--light-color);
+  --btn-dark-primary: var(--light-color);
   --btn-dark-secondary: var(--light-color);
   --btn-dark-third: var(--blue-color);
-  --text-color-light : var(--dark-color);
-  --h1-color-theme: red
+  --text-color-light: var(--dark-color);
+  --h1-color-theme: red;
+  --text-color-theme: var(--light-color);
+  --text-hover-theme: grey;
+  --color-theme-626262: var(--light-color)
 }
 
+
+.btn {
+  background-color: var(--btn-dark-primary);
+  color: var(--dark-color);
+}
 
 /** Body application**/
 body {
@@ -60,6 +73,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -77,12 +91,19 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
+  color: var(--text-hover-theme);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.page {
+  margin-top: 120px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -90,9 +111,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
