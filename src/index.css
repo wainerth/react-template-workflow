@@ -6,23 +6,24 @@
 
 /** root style **/
 :root {
-  font-family: 'Satoshi', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  
   --font-theme: 'Satoshi';
   /** section palette of colors of the application **/
-  --light-color: #F0F0F0;
+  --light-color: #FFFFFF;
   --dark-color: #343A40;
   --blue-color: #387CE1;
   --green-color: #198754;
-  --background-color: #f8f9fa;
+  /* --background-color: #f8f9fa; */
   --text-color: #343a40;
   --color-theme-626262: #626262
+
+  font-family: var(--font-theme), Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 /** Normal theme**/
@@ -60,6 +61,8 @@
 body {
   margin: 0;
   min-height: 100vh;
+  font-family: var(--font-theme), Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
 }
 
 h1 {
@@ -109,7 +112,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: var(--background-color);
   }
 
   a:hover {
