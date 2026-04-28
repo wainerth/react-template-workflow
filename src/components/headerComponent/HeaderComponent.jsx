@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 
 import LogoTemplate from './img/LogoTemplate.png';
 import placeholder40 from './img/via-placeholder-40.png';
-// import { LuBuilding2 } from "react-icons/lu";
-// import { FaRegBell } from "react-icons/fa";
+import { LuBuilding2 } from "react-icons/lu";
+import { FaRegBell } from "react-icons/fa";
 import flatSpain from './img/españa.png'
 
 import "./css/header.css"
@@ -135,7 +135,7 @@ const HeaderComponent = ({ config = {}, onLogout, onSettings, onLanguageSelect, 
                                     <Dropdown className="company-dropdown workflow-dropdown vs-hidden">
                                         <Dropdown.Toggle id="dropdown-company">
                                             <div className="img-45">
-                                                {/* <LuBuilding2 size={20} color='dark' /> */}
+                                                <LuBuilding2 size={20} color='dark' />
                                                 {/* <img className='img-fluid' src={logocorporation} alt="logo corporación" /> */}
                                             </div>
                                         </Dropdown.Toggle>
@@ -150,7 +150,7 @@ const HeaderComponent = ({ config = {}, onLogout, onSettings, onLanguageSelect, 
                                     <Dropdown className="notifications-dropdown workflow-dropdown vs-hidden">
                                         <Dropdown.Toggle id="dropdown-notifications">
                                             <div className="img-45">
-                                                {/* <FaRegBell size={20} color='dark' /> */}
+                                                <FaRegBell size={20} color='dark' />
                                                 {/* <img className='img-fluid' src={iconNotification} alt="logo Notificación" /> */}
                                             </div>
                                         </Dropdown.Toggle>
@@ -205,7 +205,7 @@ const HeaderComponent = ({ config = {}, onLogout, onSettings, onLanguageSelect, 
                                             <Dropdown className="company-dropdown workflow-dropdown">
                                                 <Dropdown.Toggle id="dropdown-company">
                                                     <div className="img-45">
-                                                        {/* <LuBuilding2 size={20} color='dark' /> */}
+                                                        <LuBuilding2 size={20} color='dark' />
                                                         {/* <img className='img-fluid' src={logocorporation} alt="logo corporación" /> */}
                                                     </div>
                                                 </Dropdown.Toggle>
@@ -220,7 +220,7 @@ const HeaderComponent = ({ config = {}, onLogout, onSettings, onLanguageSelect, 
                                             <Dropdown className="notifications-dropdown workflow-dropdown">
                                                 <Dropdown.Toggle id="dropdown-notifications">
                                                     <div className="img-45">
-                                                        {/* <FaRegBell size={20} color='dark' /> */}
+                                                        <FaRegBell size={20} color='dark' />
                                                         {/* <img className='img-fluid' src={iconNotification} alt="logo Notificación" /> */}
                                                     </div>
                                                 </Dropdown.Toggle>

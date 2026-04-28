@@ -15,10 +15,13 @@ const ThemeToggle = ({ config = {
     fixedRight: false,
     fixedLeft: false
 } }) => {
+
     ThemeToggle.propTypes = {
         config: PropTypes.object,
 
     };
+
+
     const [theme, setTheme] = useState(() => {
         // detect if there is user configuration
         const storedTheme = localStorage.getItem('user-theme');
