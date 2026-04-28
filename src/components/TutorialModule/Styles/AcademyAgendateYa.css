@@ -1,0 +1,138 @@
+/* =============================================
+   AcademyAgendateYa – Solo lo que Bootstrap no da
+   ============================================= */
+.ay-app {
+  --ink: #0d1117;
+  --ink-soft: #3d4450;
+  --ink-muted: #8891a0;
+  --paper: #f8f9fb;
+  --surface: #ffffff;
+  --accent: #00ddb6;
+  --accent-light: #e8f0fe;
+  --accent-green: #00c48c;
+  --border: #e8eaed;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ay-hero-bg {
+  background:
+    radial-gradient(ellipse 60% 50% at 75% 40%, rgba(26, 108, 245, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0, 196, 140, 0.05) 0%, transparent 70%);
+}
+
+.ay-hero-grid {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.4;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+
+.ay-hero-title {
+  color: var(--ink);
+}
+
+.ay-hero-title em {
+  font-style: normal;
+  color: var(--accent);
+  display: inline-block;
+}
+
+.ay-hero-title em::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-green));
+}
+
+.ay-float-card {
+  animation: floatCard 3s ease-in-out infinite;
+}
+
+.ay-float-card-label {
+  font-size: .75rem;
+}
+
+.ay-float-card-value {
+  font-size: 1.1rem;
+}
+
+.ay-float-card-green {
+  color: var(--accent-green);
+}
+
+@keyframes floatCard {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+
+@media (max-width: 1399.98px) {
+
+  /* XXL down */
+  .ay-hero-title {
+    font-size: 5.5rem;
+  }
+
+   .ay-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 1199.98px) {
+
+  /* XL down */
+  .ay-hero-title {
+    font-size: 3rem;
+  }
+
+  .ay-description {
+    font-size:16px;
+  }
+}
+
+@media (max-width: 991.98px) {
+
+  /* LG down */
+  .ay-hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  /* Tablets y móviles medianos */
+  .ay-hero-title {
+    font-size: calc(1.525rem + 3.3vw);
+  }
+
+  .ay-hero-title br {
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+
+  /* Móviles pequeños (XS) */
+  .ay-hero-title {
+    font-size: 2rem;
+  }
+
+  .ay-hero-title br {
+    display: none !important;
+  }
+}

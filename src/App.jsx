@@ -1,22 +1,14 @@
-import './App.css'
+// --------------------- hooks ---------------------
 import { useEffect } from 'react';
-
-import HeaderComponent from './components/headerComponent/HeaderComponent';
-import { Container, Col } from 'react-bootstrap';
+import AcademyAgendateYa from './components/TutorialModule/AcademyAgendateYa';
+// --------------------- apollo ---------------------
+import { ApolloProvider } from '@apollo/client/react';
+import client from './apollo/client';
+// ------------------ others ---------------------
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import './App.css'
 
 function App() {
-
-
-  // Configuration object for the Header
-  const headerConfig = {
-    showTitle: false,
-    isAuthenticated: true,
-    title: "Mi Aplicación",
-    toggeModeConfig: {
-      showLabel: false,
-    }
-
-  };
 
 
   useEffect(() => {
@@ -25,18 +17,20 @@ function App() {
 
   return (
     <>
-      <HeaderComponent
-        config={headerConfig}
 
-      />
-      <div className="page">
-        <Container>
-          <Col sm={12}>
-            <h1> Plantilla Workflow</h1>
-            <button>mi boton</button>
-          </Col>
+      <div >
+        <ApolloProvider client={client}>
+          <BrowserRouter>
+            <Routes>
 
-        </Container>
+              <Route path="/" element={<AcademyAgendateYa />} />
+
+            </Routes>
+          </BrowserRouter>
+        </ApolloProvider>
+
+
+
       </div>
     </>
   )
