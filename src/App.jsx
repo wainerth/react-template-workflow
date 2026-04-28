@@ -9,8 +9,6 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import './App.css'
 
 function App() {
-
-
   useEffect(() => {
     localStorage.setItem("user-theme", "light")
   }, [])
